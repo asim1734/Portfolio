@@ -9,7 +9,7 @@ export interface SkillsGridProps {
 
 export function SkillsGrid({ skills }: SkillsGridProps) {
   return (
-    <section className="px-6 py-20 md:px-12">
+    <section id="skills" className="px-6 py-20 md:px-12 scroll-mt-24 md:scroll-mt-28">
       <div className="w-full">
         <div className="mb-12 w-full max-w-4xl">
           <p className="font-mono text-sm text-accent">Technical skills</p>

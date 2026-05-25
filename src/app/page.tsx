@@ -33,8 +33,10 @@ export default function Home() {
   return (
     <main className="flex w-full flex-col">
       <Hero />
+      <div id="experience" className="scroll-mt-24 md:scroll-mt-28" aria-hidden="true" />
       <ProjectShowcase />
       <SkillsGrid skills={skills} />
+      <div id="publications" className="scroll-mt-24 md:scroll-mt-28" aria-hidden="true" />
     </main>
   );
 }

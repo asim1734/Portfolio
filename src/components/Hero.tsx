@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 py-20 md:px-12 lg:py-28">
+    <section id="home" className="relative overflow-hidden px-6 pt-6 pb-16 md:px-12 md:pt-8 lg:pt-10 lg:pb-24 scroll-mt-16 md:scroll-mt-20 mt-8 md:mt-10yesye">
       <div className="mx-auto w-full">
         <div className="w-full rounded-[2.2rem] border border-border bg-surface p-8 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.24)] md:p-12">
           <p className="mb-5 font-mono text-sm uppercase tracking-[0.2em] text-accent md:text-base">
@@ -27,9 +27,9 @@ export function Hero() {
             <span className="rounded-full border border-border bg-surface-strong px-4 py-2 text-sm text-foreground">AI Agents</span>
           </div>
 
-          <div className="flex flex-wrap gap-4 text-base md:text-lg">
+          <div id="contact" className="flex flex-wrap gap-4 text-base md:text-lg scroll-mt-24 md:scroll-mt-28">
             <Link
-              href="mailto:contact@asim.dev"
+              href="asim.rupani@gmail.com"
               className="inline-flex items-center gap-2 rounded-full border border-[#efc4bf] bg-[#fff0ed] px-5 py-3 text-[#9a3412] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -39,7 +39,7 @@ export function Hero() {
               Email
             </Link>
             <Link
-              href="https://github.com/asim"
+              href="https://github.com/asim1734"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-[#cbd5e1] bg-[#f8fafc] px-5 py-3 text-[#0f172a] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
@@ -50,7 +50,7 @@ export function Hero() {
               GitHub
             </Link>
             <Link
-              href="https://linkedin.com/in/asim"
+              href="https://linkedin.com/in/asim-rupani"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-[#bfdbfe] bg-[#eff6ff] px-5 py-3 text-[#1d4ed8] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
