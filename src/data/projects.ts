@@ -45,7 +45,11 @@ export const projects: ProjectShowcaseItem[] = [
     summary:
       'Turns rough product ideas into structured execution plans, with AI drafting the PRD and the system validating the task graph before it reaches the user.',
     logoLabel: 'DP',
-    screenshots: ['Dashboard', 'PRD Draft', 'Task Graph'],
+    screenshots: [
+      '/screenshots/devplanner/1-Dashboard.png',
+      '/screenshots/devplanner/2-PRD-Draft.png',
+      '/screenshots/devplanner/3-Task-Graph.png',
+    ],
     focus: ['PRD drafting', 'Task breakdowns', 'Dependency-safe generation'],
     overview:
       'A planning tool that turns product ideas into structured execution plans with AI-assisted breakdowns.',
@@ -83,7 +87,11 @@ export const projects: ProjectShowcaseItem[] = [
     summary:
       'A full-stack workforce management platform for secure employee administration, role-based access, and clear dashboard workflows.',
     logoLabel: 'WH',
-    screenshots: ['Auth Flow', 'Admin Dashboard', 'User Management'],
+    screenshots: [
+      '/screenshots/workforcehub/1-Auth-Flow.png',
+      '/screenshots/workforcehub/2-Admin-Dashboard.png',
+      '/screenshots/workforcehub/3-User-Management.png',
+    ],
     focus: ['Role-based access', 'User administration', 'Operational clarity'],
     overview:
       'A full-stack workforce management platform for secure employee administration and role-based access.',
@@ -146,7 +154,6 @@ export const projects: ProjectShowcaseItem[] = [
     features: [
       { title: 'Browse and filters', detail: 'Supports discovery by genre, platform, rating, and release year.' },
       { title: 'Tier list creation', detail: 'Lets users order games into custom lists visually.' },
-      { title: 'Review history', detail: 'Keeps personal ratings and text reviews easy to find.' },
       { title: 'Game detail pages', detail: 'Surfaces screenshots, trailers, and metadata in one place.' },
     ],
     links: [

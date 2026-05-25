@@ -72,7 +72,7 @@ export default function Navbar() {
           transition: "width 900ms cubic-bezier(0.22, 1, 0.36, 1), max-width 900ms cubic-bezier(0.22, 1, 0.36, 1), padding 900ms cubic-bezier(0.22, 1, 0.36, 1), border-radius 900ms cubic-bezier(0.22, 1, 0.36, 1), background-color 900ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 900ms cubic-bezier(0.22, 1, 0.36, 1), backdrop-filter 900ms cubic-bezier(0.22, 1, 0.36, 1), border-color 900ms cubic-bezier(0.22, 1, 0.36, 1)"
         }}
       >
-        <Link href="#home" className="flex min-w-0 items-center gap-3 whitespace-nowrap">
+        <Link href="#home" className={`flex min-w-0 items-center gap-3 whitespace-nowrap transition-opacity duration-700 ${isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
           <span className="flex flex-col leading-none text-zinc-950">
             <span className="text-sm font-semibold tracking-[0.28em] uppercase">Asim Rupani</span>
           </span>
