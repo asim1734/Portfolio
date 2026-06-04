@@ -21,6 +21,32 @@ export function ChatSection() {
   const isLoading = status === 'submitted' || status === 'streaming';
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
+  // Listen for external trigger to ask a question (e.g., from project cards)
+  useEffect(() => {
+    const handleAskAI = async (e: Event) => {
+      const customEvent = e as CustomEvent<{ text: string }>;
+      if (!customEvent.detail?.text) return;
+
+      // Scroll the chat section into view
+      const chatSection = document.getElementById('chat');
+      if (chatSection) {
+        chatSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Automatically trigger message send if not currently loading
+      try {
+        await sendMessage({ text: customEvent.detail.text });
+      } catch (err) {
+        console.error('Failed to send external AI message:', err);
+      }
+    };
+
+    window.addEventListener('ask-portfolio-ai', handleAskAI);
+    return () => {
+      window.removeEventListener('ask-portfolio-ai', handleAskAI);
+    };
+  }, [sendMessage]);
+
   // Automatically scroll to the bottom when messages or loading state changes
   useEffect(() => {
     if (chatContainerRef.current) {

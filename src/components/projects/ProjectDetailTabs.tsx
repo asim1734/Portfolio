@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Sparkles } from 'lucide-react';
 import { type ProjectShowcaseItem } from '@/data/projects';
 
 type ProjectTab = 'overview' | 'stack' | 'features' | 'links';
@@ -61,43 +62,60 @@ export function ProjectDetailTabs({ project }: ProjectDetailTabsProps) {
       className="rounded-2xl border border-border bg-surface p-5 shadow-[0_18px_45px_-35px_rgba(15,23,42,0.22)] md:p-6"
       style={{ borderColor: project.accent + '55' }}
     >
-      <div className="flex flex-wrap gap-3">
-        <TabButton
-          active={activeTab === 'overview'}
-          accent={project.accent}
-          accentText={project.accentText}
-          accentSoft={project.accentSoft}
-          onClick={() => setActiveTab('overview')}
+      <div className="flex flex-wrap gap-3 items-center justify-between">
+        <div className="flex flex-wrap gap-3">
+          <TabButton
+            active={activeTab === 'overview'}
+            accent={project.accent}
+            accentText={project.accentText}
+            accentSoft={project.accentSoft}
+            onClick={() => setActiveTab('overview')}
+          >
+            Overview
+          </TabButton>
+          <TabButton
+            active={activeTab === 'stack'}
+            accent={project.accent}
+            accentText={project.accentText}
+            accentSoft={project.accentSoft}
+            onClick={() => setActiveTab('stack')}
+          >
+            Tech Stack
+          </TabButton>
+          <TabButton
+            active={activeTab === 'features'}
+            accent={project.accent}
+            accentText={project.accentText}
+            accentSoft={project.accentSoft}
+            onClick={() => setActiveTab('features')}
+          >
+            Features
+          </TabButton>
+          <TabButton
+            active={activeTab === 'links'}
+            accent={project.accent}
+            accentText={project.accentText}
+            accentSoft={project.accentSoft}
+            onClick={() => setActiveTab('links')}
+          >
+            Links
+          </TabButton>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => {
+            const event = new CustomEvent('ask-portfolio-ai', {
+              detail: { text: `Tell me more about the ${project.name} project.` }
+            });
+            window.dispatchEvent(event);
+          }}
+          className="inline-flex items-center gap-2 rounded-full border border-border/80 px-4 py-2 text-sm font-sans font-semibold transition text-zinc-700 hover:text-accent hover:bg-accent-soft/10 cursor-pointer"
+          style={{ borderColor: project.accent + '44' }}
         >
-          Overview
-        </TabButton>
-        <TabButton
-          active={activeTab === 'stack'}
-          accent={project.accent}
-          accentText={project.accentText}
-          accentSoft={project.accentSoft}
-          onClick={() => setActiveTab('stack')}
-        >
-          Tech Stack
-        </TabButton>
-        <TabButton
-          active={activeTab === 'features'}
-          accent={project.accent}
-          accentText={project.accentText}
-          accentSoft={project.accentSoft}
-          onClick={() => setActiveTab('features')}
-        >
-          Features
-        </TabButton>
-        <TabButton
-          active={activeTab === 'links'}
-          accent={project.accent}
-          accentText={project.accentText}
-          accentSoft={project.accentSoft}
-          onClick={() => setActiveTab('links')}
-        >
-          Links
-        </TabButton>
+          <Sparkles className="h-4 w-4 text-accent" />
+          Ask AI
+        </button>
       </div>
 
       <div className="mt-5 space-y-4 text-sm md:text-base text-text-secondary">
