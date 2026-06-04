@@ -5,23 +5,23 @@ import { SkillsGrid, type Skill } from '@/components/SkillsGrid';
 const skills: Skill[] = [
   {
     category: 'Frontend',
-    items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vue.js'],
+    items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'TanStack Query', 'React Flow'],
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'REST APIs'],
+    items: ['Node.js', 'Express', 'FastAPI', 'PostgreSQL', 'MongoDB', 'REST APIs'],
   },
   {
     category: 'Tools & DevOps',
-    items: ['Git', 'Docker', 'Vercel', 'AWS', 'CI/CD'],
+    items: ['Git', 'Vercel', 'CI/CD', 'Monorepos'],
   },
   {
     category: 'Architecture',
-    items: ['State Management', 'Design Systems', 'Testing', 'Performance'],
+    items: ['State Management', 'Design Systems', 'Zod Validation', 'Drag & Drop APIs'],
   },
   {
     category: 'AI & ML',
-    items: ['LLM Integration', 'Prompt Engineering', 'Vector DBs'],
+    items: ['LLM Integration', 'Prompt Engineering', 'Multi-Agent Systems'],
   },
   {
     category: 'Soft Skills',
