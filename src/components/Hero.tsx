@@ -14,9 +14,9 @@ export function Hero() {
           </h1>
 
           <p className="mb-8 max-w-4xl text-lg leading-relaxed text-text-secondary md:text-xl">
-            My goal is to build full-stack applications designed to solve practical, real-world problems.
-             I care about clean architecture and good programming practices when building any project. 
-             Outside of pure engineering, my focus is heavily on ensuring the final product provides immediate, obvious utility to the end user.
+            I am a full-stack engineer specializing in robust web architectures and AI-agent systems. 
+            I focus on shipping clean, type-safe, and production-ready applications utilizing TypeScript, React, Next.js, and FastAPI.
+            As head of a 50+ member coding club, I bring strong collaboration skills alongside technical rigor—ready to contribute immediately to a forward-thinking engineering team.
           </p>
 
           <div className="mb-8 flex flex-wrap gap-3">
@@ -27,7 +27,7 @@ export function Hero() {
             <span className="rounded-full border border-border bg-surface-strong px-4 py-2 text-sm text-foreground">AI Agents</span>
           </div>
 
-          <div id="contact" className="flex flex-wrap gap-4 text-base md:text-lg scroll-mt-24 md:scroll-mt-28">
+          <div className="flex flex-wrap gap-4 text-base md:text-lg scroll-mt-24 md:scroll-mt-28">
             <Link
               href="asim.rupani@gmail.com"
               className="inline-flex items-center gap-2 rounded-full border border-[#efc4bf] bg-[#fff0ed] px-5 py-3 text-[#9a3412] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"

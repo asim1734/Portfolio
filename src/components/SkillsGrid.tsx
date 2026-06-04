@@ -15,7 +15,11 @@ export function SkillsGrid({ skills }: SkillsGridProps) {
       <div className="w-full rounded-[2rem] border border-border/80 bg-gradient-to-br from-surface via-surface to-surface-strong/70 p-6 shadow-[0_22px_60px_-40px_rgba(15,118,110,0.25)] md:p-8">
         <div className="mb-12 w-full max-w-4xl">
           <p className="font-mono text-sm text-accent">Technical skills</p>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">The tools I reach for when shipping UI and product work.</h2>
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl">My Technical Toolkit & Expertise</h2>
+          <p className="mt-4 text-text-secondary leading-7">
+            The languages, frameworks, and tools I leverage to build scalable, high-performance web products. 
+            I focus heavily on end-to-end type safety, responsive component design, database modeling, and structured AI-agent workflows.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">

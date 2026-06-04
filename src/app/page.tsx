@@ -1,6 +1,7 @@
 import { Hero } from '@/components/Hero';
 import { ProjectShowcase } from '@/components/ProjectShowcase';
 import { SkillsGrid, type Skill } from '@/components/SkillsGrid';
+import { ContactSection } from '@/components/ContactSection';
 
 const skills: Skill[] = [
   {
@@ -36,6 +37,7 @@ export default function Home() {
       <div id="experience" className="scroll-mt-24 md:scroll-mt-28" aria-hidden="true" />
       <ProjectShowcase />
       <SkillsGrid skills={skills} />
+      <ContactSection />
       <div id="publications" className="scroll-mt-24 md:scroll-mt-28" aria-hidden="true" />
     </main>
   );
