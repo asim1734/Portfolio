@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { contactInfo } from '@/data/contact';
 
 export function Hero() {
   return (
@@ -29,7 +30,7 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-4 text-base md:text-lg scroll-mt-24 md:scroll-mt-28">
             <Link
-              href="asim.rupani@gmail.com"
+              href={`mailto:${contactInfo.email}`}
               className="inline-flex items-center gap-2 rounded-full border border-[#efc4bf] bg-[#fff0ed] px-5 py-3 text-[#9a3412] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -39,7 +40,7 @@ export function Hero() {
               Email
             </Link>
             <Link
-              href="https://github.com/asim1734"
+              href={contactInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-[#cbd5e1] bg-[#f8fafc] px-5 py-3 text-[#0f172a] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
@@ -50,7 +51,7 @@ export function Hero() {
               GitHub
             </Link>
             <Link
-              href="https://linkedin.com/in/asim-rupani"
+              href={contactInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-[#bfdbfe] bg-[#eff6ff] px-5 py-3 text-[#1d4ed8] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"

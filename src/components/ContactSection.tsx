@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, GraduationCap, Send, CheckCircle } from 'lucide-react';
+import { contactInfo } from '@/data/contact';
 
 export function ContactSection() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -76,7 +77,7 @@ export function ContactSection() {
             <div className="space-y-6">
               {/* Email */}
               <a
-                href="mailto:asim.rupani@gmail.com"
+                href={`mailto:${contactInfo.email}`}
                 className="group flex items-center gap-4 rounded-2xl border border-border bg-surface-strong/50 p-4 transition-all duration-300 hover:border-accent hover:bg-accent-soft/10 hover:scale-[1.01]"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent group-hover:scale-105 transition-transform">
@@ -84,13 +85,13 @@ export function ContactSection() {
                 </div>
                 <div className="min-w-0">
                   <p className="font-mono text-xs uppercase tracking-wider text-text-secondary">Email me</p>
-                  <p className="mt-1 text-sm font-semibold text-foreground truncate">asim.rupani@gmail.com</p>
+                  <p className="mt-1 text-sm font-semibold text-foreground truncate">{contactInfo.email}</p>
                 </div>
               </a>
 
               {/* Phone */}
               <a
-                href="tel:+919346250887"
+                href={`tel:${contactInfo.phoneRaw}`}
                 className="group flex items-center gap-4 rounded-2xl border border-border bg-surface-strong/50 p-4 transition-all duration-300 hover:border-accent hover:bg-accent-soft/10 hover:scale-[1.01]"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent group-hover:scale-105 transition-transform">
@@ -98,7 +99,7 @@ export function ContactSection() {
                 </div>
                 <div className="min-w-0">
                   <p className="font-mono text-xs uppercase tracking-wider text-text-secondary">Call or WhatsApp</p>
-                  <p className="mt-1 text-sm font-semibold text-foreground truncate">+91 93462 50887</p>
+                  <p className="mt-1 text-sm font-semibold text-foreground truncate">{contactInfo.phone}</p>
                 </div>
               </a>
 
@@ -110,7 +111,7 @@ export function ContactSection() {
                 <div className="min-w-0">
                   <p className="font-mono text-xs uppercase tracking-wider text-text-secondary">Education</p>
                   <p className="mt-1 text-sm font-semibold text-foreground">
-                    SIET Hyderabad <span className="text-xs text-text-secondary font-normal">(CGPA: 9.27)</span>
+                    {contactInfo.education.college} <span className="text-xs text-text-secondary font-normal">(CGPA: {contactInfo.education.cgpa})</span>
                   </p>
                 </div>
               </div>
@@ -118,18 +119,18 @@ export function ContactSection() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://github.com/asim1734"
+                href={contactInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 rounded-full border border-border bg-surface-strong px-5 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-all duration-300 hover:border-accent hover:bg-accent-soft/10 hover:-translate-y-0.5"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
-                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.639.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.639.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .85-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                 </svg>
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/asim-rupani"
+                href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 rounded-full border border-border bg-surface-strong px-5 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-all duration-300 hover:border-accent hover:bg-accent-soft/10 hover:-translate-y-0.5"

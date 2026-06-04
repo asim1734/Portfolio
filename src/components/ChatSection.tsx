@@ -4,13 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useChat, UIMessage } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 import { Send, Bot, User, Sparkles, RotateCcw, Loader2, ArrowRight } from 'lucide-react';
-
-const SUGGESTED_QUESTIONS = [
-  { text: "What is Asim's technical toolkit?", label: "Tech Stack" },
-  { text: "Tell me more about the DevPlanner project.", label: "Featured Project" },
-  { text: "How can I contact or hire Asim?", label: "Contact Info" },
-  { text: "What is Asim's role in his college coding club?", label: "Leadership" }
-];
+import { SUGGESTED_QUESTIONS } from '@/data/chatbot';
 
 export function ChatSection() {
   const {
