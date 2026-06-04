@@ -7,6 +7,8 @@ export const contactInfo = {
   githubUsername: "asim1734",
   linkedin: "https://linkedin.com/in/asim-rupani",
   linkedinUsername: "asim-rupani",
+  location: "Hyderabad, India",
+  jobPreferences: "Open to Remote, Hybrid, or On-site. Willing to relocate for strong opportunities.",
   education: {
     college: "SIET Hyderabad",
     cgpa: "9.27",
