@@ -34,7 +34,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
   const trackTransform = `translate3d(-${activeSlideIndex * 100}%, 0, 0) translateX(${pointerOffset}px)`;
 
   useEffect(() => {
-    // no-op: removed debug instrumentation to keep SSR and client markup aligned
+    // no-op
   }, []);
 
   useEffect(() => {
@@ -100,7 +100,6 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
       return;
     }
     if (activeSlideIndex === 0) {
-      // snapping to last real slide (cloned edge)
       setTransitionEnabled(false);
       setActiveSlideIndex(screenshotCount);
       window.requestAnimationFrame(() => {
@@ -111,7 +110,6 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
     }
 
     if (activeSlideIndex === slides.length - 1) {
-      // snapping to first real slide (cloned edge)
       setTransitionEnabled(false);
       setActiveSlideIndex(1);
       window.requestAnimationFrame(() => {
@@ -126,7 +124,6 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
     // no-op
   };
 
-  // Pointer / swipe handling
   const handlePointerDown = (e: any) => {
     pointerActiveRef.current = true;
     pointerStartXRef.current = e.clientX ?? (e.touches?.[0]?.clientX ?? 0);
@@ -233,12 +230,10 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
                   )}
                 </div>
 
-                
-
-                <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/60 to-transparent p-4 md:p-6">
+                <div className="absolute bottom-0 left-0 right-0 z-20 p-4 md:p-6 pointer-events-none">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white">
+                      <h3 className="text-lg md:text-xl font-semibold text-white drop-shadow-md">
                         {currentLabel
                           .split('/')
                           .pop()
