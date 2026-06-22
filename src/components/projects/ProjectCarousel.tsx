@@ -43,7 +43,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
     }
 
     const intervalId = window.setInterval(() => {
-      setActiveSlideIndex((current) => current + 1);
+      setActiveSlideIndex((current) => (current >= slides.length - 1 ? current : current + 1));
     }, 2800);
 
     return () => {
@@ -80,7 +80,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
       return;
     }
 
-    setActiveSlideIndex((current) => current - 1);
+    setActiveSlideIndex((current) => (current <= 0 ? current : current - 1));
   };
 
   const nextSlide = (isManual = false) => {
@@ -92,7 +92,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
       return;
     }
 
-    setActiveSlideIndex((current) => current + 1);
+    setActiveSlideIndex((current) => (current >= slides.length - 1 ? current : current + 1));
   };
 
   const handleTrackTransitionEnd = () => {
@@ -177,7 +177,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
           <div className="relative w-full h-full flex items-center justify-center px-6 md:px-8">
             <div className="absolute inset-0 rounded-none overflow-hidden mx-6 md:mx-8 flex flex-col">
                 <div
-                  className="flex-1 relative bg-zinc-950 w-full h-full overflow-hidden"
+                  className="flex-1 relative bg-transparent w-full h-full overflow-hidden"
                   onPointerDown={handlePointerDown}
                   onPointerMove={handlePointerMove}
                   onPointerUp={handlePointerUp}
@@ -201,7 +201,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
                       const translate = pointerOffset * (isActive ? 0.35 : 0.08);
                       const scale = isActive ? 1.02 : 0.98;
                       return (
-                        <div key={`${label ?? 'slide'}-${index}`} className="h-full w-full flex-shrink-0 bg-zinc-950">
+                        <div key={`${label ?? 'slide'}-${index}`} className="h-full w-full flex-shrink-0 bg-transparent">
                           <div
                             className="flex h-full w-full items-center justify-center"
                             style={{
@@ -224,7 +224,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
                       );
                     })
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-zinc-950">
+                    <div className="flex h-full w-full items-center justify-center bg-transparent">
                       <p className="text-text-secondary">No screenshots available</p>
                     </div>
                   )}
@@ -233,7 +233,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
                 <div className="absolute bottom-0 left-0 right-0 z-20 p-4 md:p-6 pointer-events-none">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white drop-shadow-md">
+                      <h3 className={`text-lg md:text-xl font-semibold ${['devplanner', 'workforcehub'].includes(project.id) ? 'text-zinc-900 drop-shadow-sm' : 'text-white drop-shadow-md'}`}>
                         {currentLabel
                           .split('/')
                           .pop()
