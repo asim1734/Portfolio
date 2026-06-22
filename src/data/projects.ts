@@ -24,6 +24,7 @@ export interface ProjectShowcaseItem {
   shortDescription: string;
   summary: string;
   logoLabel: string;
+  logoImage?: string;
   screenshots: string[];
   focus: string[];
   overview: string;
@@ -45,10 +46,11 @@ export const projects: ProjectShowcaseItem[] = [
     summary:
       'Turns rough product ideas into structured execution plans, with AI drafting the PRD and the system validating the task graph before it reaches the user.',
     logoLabel: 'DP',
+    logoImage: '/logos/DevPlanner.png',
     screenshots: [
-      '/screenshots/DevPlanner/1-Home-Page.png',
-      '/screenshots/DevPlanner/2-Project-list-Page.png',
-      '/screenshots/DevPlanner/3-Chat-Page.png',
+      '/screenshots/DevPlanner/1-Home.png',
+      '/screenshots/DevPlanner/2-Project-List.png',
+      '/screenshots/DevPlanner/3-Chat.png',
       '/screenshots/DevPlanner/4-Workflow-Graph.png',
       '/screenshots/DevPlanner/5-System-diagrams.png',
     ],
@@ -79,6 +81,50 @@ export const projects: ProjectShowcaseItem[] = [
     ],
   },
   {
+    id: 'my-game-den',
+    name: 'My Game Den',
+    year: '2026',
+    accent: '#be185d',
+    accentSoft: '#fceaf2',
+    accentText: '#9d174d',
+    shortDescription: 'Track your game library, build tier lists, and write reviews.',
+    summary:
+      'A game catalog application for discovery, collection management, tier lists, and personal reviews with a React and Express stack.',
+    logoLabel: 'MGD',
+    logoImage: '/logos/MyGameDen.png',
+    screenshots: [
+      '/screenshots/My-game-den/1-Dashboard.png',
+      '/screenshots/My-game-den/2-Game-Details.png',
+      '/screenshots/My-game-den/3-Browse-section.png',
+      '/screenshots/My-game-den/4-Library.png',
+      '/screenshots/My-game-den/5-TierList-Builder.png',
+    ],
+    focus: ['Game discovery', 'Collection management', 'Tier list creation'],
+    overview:
+      'A game catalog application for discovery, collection management, tier lists, and personal reviews.',
+    architecture: [
+      'IGDB-backed search and browse flows surface the game catalog quickly.',
+      'Collections and tier lists keep the library organized across personal workflows.',
+      'Review history and per-game lookup make it easy to revisit prior opinions.',
+    ],
+    stack: [
+      { label: 'React', note: 'Frontend app and stateful interactions.' },
+      { label: 'Express', note: 'API routes and protected endpoints.' },
+      { label: 'MongoDB', note: 'Collections, games, and reviews.' },
+      { label: 'IGDB API', note: 'Game metadata, covers, and discovery data.' },
+      { label: 'Drag and drop', note: 'Tier list building interactions.' },
+    ],
+    features: [
+      { title: 'Browse and filters', detail: 'Supports discovery by genre, platform, rating, and release year.' },
+      { title: 'Tier list creation', detail: 'Lets users order games into custom lists visually.' },
+      { title: 'Game detail pages', detail: 'Surfaces screenshots, trailers, and metadata in one place.' },
+    ],
+    links: [
+      { label: 'Product demo', description: 'Live demo', note: 'https://my-game-den.vercel.app/' },
+      { label: 'Source code', description: 'GitHub repository', note: 'https://github.com/asim1734/My-Game-Den' },
+    ],
+  },
+  {
     id: 'workforcehub',
     name: 'WorkforceHub',
     year: '2026',
@@ -89,6 +135,7 @@ export const projects: ProjectShowcaseItem[] = [
     summary:
       'A full-stack workforce management platform for secure employee administration, role-based access, and clear dashboard workflows.',
     logoLabel: 'WH',
+    logoImage: '/logos/WorkforceHub.png',
     screenshots: [
       '/screenshots/WorkforceHub/1-Directory.png',
       '/screenshots/WorkforceHub/2-Dashboard.png',
@@ -119,49 +166,6 @@ export const projects: ProjectShowcaseItem[] = [
     links: [
       { label: 'Product demo', description: 'Placeholder for the live walkthrough.', note: 'Add final URL later.' },
       { label: 'Source code', description: 'Placeholder for the repository link.', note: 'Add final URL later.' },
-    ],
-  },
-  {
-    id: 'my-game-den',
-    name: 'My Game Den',
-    year: '2026',
-    accent: '#be185d',
-    accentSoft: '#fceaf2',
-    accentText: '#9d174d',
-    shortDescription: 'Track your game library, build tier lists, and write reviews.',
-    summary:
-      'A game catalog application for discovery, collection management, tier lists, and personal reviews with a React and Express stack.',
-    logoLabel: 'MGD',
-    screenshots: [
-      '/screenshots/My-game-den/1-Dashboard.png',
-      '/screenshots/My-game-den/2-Game-Details.png',
-      '/screenshots/My-game-den/3-Browse-section.png',
-      '/screenshots/My-game-den/4-Library.png',
-      '/screenshots/My-game-den/5-TierList.png',
-    ],
-    focus: ['Game discovery', 'Collection management', 'Tier list creation'],
-    overview:
-      'A game catalog application for discovery, collection management, tier lists, and personal reviews.',
-    architecture: [
-      'IGDB-backed search and browse flows surface the game catalog quickly.',
-      'Collections and tier lists keep the library organized across personal workflows.',
-      'Review history and per-game lookup make it easy to revisit prior opinions.',
-    ],
-    stack: [
-      { label: 'React', note: 'Frontend app and stateful interactions.' },
-      { label: 'Express', note: 'API routes and protected endpoints.' },
-      { label: 'MongoDB', note: 'Collections, games, and reviews.' },
-      { label: 'IGDB API', note: 'Game metadata, covers, and discovery data.' },
-      { label: 'Drag and drop', note: 'Tier list building interactions.' },
-    ],
-    features: [
-      { title: 'Browse and filters', detail: 'Supports discovery by genre, platform, rating, and release year.' },
-      { title: 'Tier list creation', detail: 'Lets users order games into custom lists visually.' },
-      { title: 'Game detail pages', detail: 'Surfaces screenshots, trailers, and metadata in one place.' },
-    ],
-    links: [
-      { label: 'Product demo', description: 'Live demo', note: 'https://my-game-den.vercel.app/' },
-      { label: 'Source code', description: 'GitHub repository', note: 'https://github.com/asim1734/My-Game-Den' },
     ],
   },
 ];

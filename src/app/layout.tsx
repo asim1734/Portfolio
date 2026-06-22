@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://asim.dev",
+    url: "https://www.asimrupani.engineer",
     title: "Asim - Frontend Engineer",
     description: "Senior frontend engineer specializing in React, TypeScript, and Next.js",
   },

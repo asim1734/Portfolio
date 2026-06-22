@@ -33,7 +33,7 @@ export function ProjectCard({ project, isActive, onToggle }: ProjectCardProps) {
       >
         <div className="flex min-w-0 items-center gap-4 md:gap-5">
           <div
-            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border bg-surface-strong font-sans text-sm ${
+            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border bg-surface-strong font-sans text-sm overflow-hidden ${
               isActive ? 'shadow-[0_12px_30px_-16px_rgba(15,23,42,0.28)]' : ''
             }`}
             style={{
@@ -46,7 +46,16 @@ export function ProjectCard({ project, isActive, onToggle }: ProjectCardProps) {
               transitionTimingFunction: 'cubic-bezier(0.22,1,0.36,1)',
             }}
           >
-            {project.logoLabel}
+            {project.logoImage ? (
+              <img
+                src={project.logoImage}
+                alt={`${project.name} logo`}
+                className="h-10 w-10 object-contain"
+                draggable={false}
+              />
+            ) : (
+              project.logoLabel
+            )}
           </div>
 
           <div className="min-w-0">
