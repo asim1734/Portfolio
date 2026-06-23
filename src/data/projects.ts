@@ -76,8 +76,7 @@ export const projects: ProjectShowcaseItem[] = [
       { title: 'Project graph view', detail: 'Makes the output easy to scan and revise.' },
     ],
     links: [
-      { label: 'Product demo', description: 'Placeholder for the live walkthrough.', note: 'Add final URL later.' },
-      { label: 'Source code', description: 'Placeholder for the repository link.', note: 'Add final URL later.' },
+      { label: 'Source code', description: 'GitHub repository', note: 'https://github.com/asim1734/DevPlanner' },
     ],
   },
   {
@@ -164,8 +163,7 @@ export const projects: ProjectShowcaseItem[] = [
       { title: 'Responsive dashboard', detail: 'Works across desktop and tablet layouts.' },
     ],
     links: [
-      { label: 'Product demo', description: 'Placeholder for the live walkthrough.', note: 'Add final URL later.' },
-      { label: 'Source code', description: 'Placeholder for the repository link.', note: 'Add final URL later.' },
+      { label: 'Source code', description: 'GitHub repository', note: 'https://github.com/asim1734/WorkforceHub' },
     ],
   },
 ];

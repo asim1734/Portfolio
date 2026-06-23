@@ -173,11 +173,11 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
       <p className="font-sans text-sm text-text-secondary">Screenshot collection</p>
 
       <div className="relative group">
-        <div className="relative h-[280px] md:h-[360px] flex items-center justify-center">
-          <div className="relative w-full h-full flex items-center justify-center px-6 md:px-8">
-            <div className="absolute inset-0 rounded-none overflow-hidden mx-6 md:mx-8 flex flex-col">
+        <div className="relative h-[220px] sm:h-[280px] md:h-[360px] flex items-center justify-center">
+          <div className="relative w-full h-full flex items-center justify-center px-0 sm:px-2 md:px-8">
+            <div className="absolute inset-0 rounded-2xl md:rounded-none overflow-hidden mx-0 sm:mx-2 md:mx-8 flex flex-col">
                 <div
-                  className="flex-1 relative bg-transparent w-full h-full overflow-hidden"
+                  className="flex-1 relative bg-transparent w-full h-full overflow-hidden touch-pan-y select-none"
                   onPointerDown={handlePointerDown}
                   onPointerMove={handlePointerMove}
                   onPointerUp={handlePointerUp}
@@ -213,7 +213,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
                               <img
                                 src={label.startsWith('/') ? label : `/screenshots/${project.id}/${label}`}
                                 alt="Screenshot"
-                                className="h-full w-full object-contain"
+                                className="h-full w-full object-contain pointer-events-none"
                                 draggable={false}
                               />
                             ) : (
@@ -230,7 +230,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
                   )}
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 z-20 p-4 md:p-6 pointer-events-none">
+                <div className="absolute bottom-0 left-0 right-0 z-20 p-3 md:p-6 pointer-events-none">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className={`text-lg md:text-xl font-semibold ${['devplanner', 'workforcehub'].includes(project.id) ? 'text-zinc-900 drop-shadow-sm' : 'text-white drop-shadow-md'}`}>

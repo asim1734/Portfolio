@@ -15,9 +15,7 @@ export function Hero() {
           </h1>
 
           <p className="mb-8 max-w-4xl text-lg leading-relaxed text-text-secondary md:text-xl">
-            I am a full-stack engineer specializing in robust web architectures and AI-agent systems. 
-            I focus on shipping clean, type-safe, and production-ready applications utilizing TypeScript, React, Next.js, and FastAPI.
-            As head of a 50+ member coding club, I bring strong collaboration skills alongside technical rigor—ready to contribute immediately to a forward-thinking engineering team.
+            I am a full-stack developer who builds web applications and AI tools. I use TypeScript, React, Next.js, and FastAPI to write clean and reliable code. I enjoy solving problems and am ready to join a great engineering team.
           </p>
 
           <div className="mb-8 flex flex-wrap gap-3">

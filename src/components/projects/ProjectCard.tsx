@@ -28,7 +28,7 @@ export function ProjectCard({ project, isActive, onToggle }: ProjectCardProps) {
       <button
         type="button"
         onClick={onToggle}
-        className="group flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-surface-strong/60 md:px-7"
+        className="group flex w-full items-center justify-between gap-3 px-4 py-4 sm:gap-4 sm:px-5 sm:py-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-surface-strong/60 md:px-7"
         aria-expanded={isActive}
       >
         <div className="flex min-w-0 items-center gap-4 md:gap-5">
@@ -123,7 +123,7 @@ export function ProjectCard({ project, isActive, onToggle }: ProjectCardProps) {
       >
         <div className="min-h-0 overflow-hidden">
           <div
-            className="p-4 md:p-6"
+            className="p-2 pt-0 sm:p-4 md:p-6"
             style={{
               opacity: isActive ? 1 : 0,
               transform: isActive ? 'translateY(0px) scale(1)' : 'translateY(12px) scale(0.985)',

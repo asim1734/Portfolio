@@ -176,11 +176,11 @@ export function ChatSection() {
   };
 
   return (
-    <section id="chat" className="px-6 py-10 md:px-12 md:py-12 scroll-mt-24 md:scroll-mt-28">
-      <div className="w-full rounded-[2rem] border border-border/80 bg-gradient-to-br from-surface via-surface to-surface-strong/70 p-6 shadow-[0_22px_60px_-40px_rgba(15,118,110,0.25)] md:p-8">
+    <section id="chat" className="px-4 py-8 md:px-12 md:py-12 scroll-mt-24 md:scroll-mt-28">
+      <div className="w-full rounded-3xl md:rounded-[2rem] border border-border/80 bg-gradient-to-br from-surface via-surface to-surface-strong/70 p-3 sm:p-4 shadow-[0_22px_60px_-40px_rgba(15,118,110,0.25)] md:p-8">
         
         {/* Header Section */}
-        <div className="mb-8 w-full max-w-4xl flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="mb-5 md:mb-8 w-full max-w-4xl flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 px-1 md:px-0">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent flex items-center gap-2">
               <Sparkles className="h-4 w-4" />
@@ -188,7 +188,7 @@ export function ChatSection() {
             </p>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl text-zinc-950">Chat with Asim's Portfolio</h2>
             <p className="mt-3 text-sm text-text-secondary leading-relaxed font-normal">
-              Ask about Asim's technical toolkit, professional projects, leadership background, or contact details. The assistant streams responses dynamically using Llama 3.3.
+              Ask about Asim's technical toolkit, professional projects, leadership background, or contact details.
             </p>
           </div>
           {messages.length > 0 && (
@@ -208,31 +208,31 @@ export function ChatSection() {
           {/* Scrollable Message History Area */}
           <div
             ref={chatContainerRef}
-            className="h-[420px] overflow-y-auto p-5 md:p-6 space-y-4 bg-zinc-50/30"
+            className="h-[55vh] min-h-[350px] md:h-[420px] overflow-y-auto p-4 md:p-6 space-y-4 bg-zinc-50/30"
           >
             {messages.length === 0 ? (
-              <div className="flex h-full flex-col items-center justify-center text-center p-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft text-accent mb-4">
-                  <Bot className="h-6 w-6" />
+              <div className="flex h-full flex-col items-center justify-center text-center p-2 md:p-4">
+                <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl md:rounded-2xl bg-accent-soft text-accent mb-2 md:mb-4 shrink-0">
+                  <Bot className="h-5 w-5 md:h-6 md:w-6" />
                 </div>
-                <h3 className="text-xl font-bold tracking-tight text-zinc-950">How can I help you today?</h3>
-                <p className="mt-2 text-sm text-text-secondary max-w-md leading-relaxed font-normal">
+                <h3 className="text-lg md:text-xl font-bold tracking-tight text-zinc-950">How can I help you today?</h3>
+                <p className="mt-1 md:mt-2 text-xs md:text-sm text-text-secondary max-w-md leading-relaxed font-normal hidden sm:block">
                   I can provide detailed information about Asim's background. Tap a suggestion below or write your own question.
                 </p>
 
                 {/* Suggested Questions Grid (Centered) */}
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-2xl">
+                <div className="mt-3 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 w-full max-w-2xl">
                   {SUGGESTED_QUESTIONS.map((question, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleSuggestionClick(question.text)}
-                      className="group flex items-center justify-between gap-3 text-left rounded-2xl border border-border bg-surface p-4 transition-all duration-300 hover:border-accent hover:bg-accent-soft/10 hover:scale-[1.01] cursor-pointer"
+                      className="group flex items-center justify-between gap-2 md:gap-4 text-left rounded-2xl border border-border bg-surface p-3 md:p-5 transition-all duration-300 hover:border-accent hover:bg-accent-soft/10 hover:scale-[1.01] cursor-pointer"
                     >
                       <div>
-                        <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.15em] text-accent">{question.label}</span>
-                        <p className="text-xs font-semibold text-zinc-800 leading-snug mt-1">{question.text}</p>
+                        <span className="font-mono text-[8px] md:text-[10px] font-semibold uppercase tracking-[0.15em] text-accent">{question.label}</span>
+                        <p className="text-[11px] md:text-sm font-semibold text-zinc-800 leading-tight md:leading-snug mt-0.5 md:mt-1.5 line-clamp-2">{question.text}</p>
                       </div>
-                      <ArrowRight className="h-4 w-4 shrink-0 text-text-secondary transition-transform group-hover:translate-x-1 group-hover:text-accent" />
+                      <ArrowRight className="h-3 w-3 md:h-5 md:w-5 shrink-0 text-text-secondary transition-transform group-hover:translate-x-1 group-hover:text-accent" />
                     </button>
                   ))}
                 </div>
@@ -243,7 +243,7 @@ export function ChatSection() {
                 return (
                   <div
                     key={message.id}
-                    className={`flex gap-3.5 max-w-[85%] ${isUser ? 'ml-auto flex-row-reverse' : 'mr-auto'}`}
+                    className={`flex gap-3 md:gap-3.5 max-w-[95%] md:max-w-[85%] ${isUser ? 'ml-auto flex-row-reverse' : 'mr-auto'}`}
                   >
                     {/* Avatar */}
                     <div
@@ -258,7 +258,7 @@ export function ChatSection() {
 
                     {/* Bubble Content */}
                     <div
-                      className={`rounded-2xl px-4 py-3 shadow-xs ${
+                      className={`rounded-2xl px-3 py-2.5 md:px-4 md:py-3 shadow-xs ${
                         isUser
                           ? 'bg-accent text-white rounded-tr-sm'
                           : 'bg-surface border border-border rounded-tl-sm text-zinc-950'
@@ -290,7 +290,7 @@ export function ChatSection() {
 
             {/* Waiting for Response Indicator */}
             {status === 'submitted' && (
-              <div className="flex gap-3.5 max-w-[85%] mr-auto">
+              <div className="flex gap-3 md:gap-3.5 max-w-[95%] md:max-w-[85%] mr-auto">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-zinc-200 text-zinc-700 border border-zinc-300">
                   <Bot className="h-4.5 w-4.5 animate-pulse" />
                 </div>
@@ -316,7 +316,7 @@ export function ChatSection() {
           </div>
 
           {/* Form Input Area */}
-          <div className="border-t border-border bg-surface p-4">
+          <div className="border-t border-border bg-surface p-3 md:p-4">
             <form
               id="chat-form"
               onSubmit={handleSubmit}

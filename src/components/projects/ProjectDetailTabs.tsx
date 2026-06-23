@@ -59,7 +59,7 @@ export function ProjectDetailTabs({ project }: ProjectDetailTabsProps) {
 
   return (
     <div
-      className="rounded-2xl border border-border bg-surface p-5 shadow-[0_18px_45px_-35px_rgba(15,23,42,0.22)] md:p-6"
+      className="rounded-2xl border border-border bg-surface p-4 sm:p-5 shadow-[0_18px_45px_-35px_rgba(15,23,42,0.22)] md:p-6"
       style={{ borderColor: project.accent + '55' }}
     >
       <div className="flex flex-wrap gap-3 items-center justify-between">
