@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import { Mail, Phone, GraduationCap, Send, CheckCircle } from 'lucide-react';
 import { contactInfo } from '@/data/contact';
+import { ResumeModal } from './ResumeModal';
 
 export function ContactSection() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
@@ -118,6 +120,16 @@ export function ContactSection() {
             </div>
 
             <div className="flex flex-wrap gap-4">
+              <button
+                onClick={() => setIsResumeOpen(true)}
+                className="flex items-center gap-2.5 rounded-full border border-[#0f766e]/30 bg-[#e6f4f1] px-5 py-3 font-mono text-xs uppercase tracking-wider text-[#0f766e] transition-all duration-300 hover:bg-[#e6f4f1]/80 hover:-translate-y-0.5 font-bold cursor-pointer"
+              >
+                <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                View Resume
+              </button>
               <a
                 href={contactInfo.github}
                 target="_blank"
@@ -224,6 +236,7 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </section>
   );
 }

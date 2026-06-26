@@ -1,7 +1,12 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { contactInfo } from '@/data/contact';
+import { ResumeModal } from './ResumeModal';
 
 export function Hero() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
   return (
     <section id="home" className="relative overflow-hidden px-6 pt-6 pb-8 md:px-12 md:pt-8 lg:pt-10 lg:pb-12 scroll-mt-16 md:scroll-mt-20 mt-8 md:mt-10">
       <div className="mx-auto w-full">
@@ -27,6 +32,16 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-4 text-base md:text-lg scroll-mt-24 md:scroll-mt-28">
+            <button
+              onClick={() => setIsResumeOpen(true)}
+              className="inline-flex items-center gap-2 rounded-full border border-[#b4e4dd] bg-[#e6f4f1] px-5 py-3 text-[#0f766e] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md cursor-pointer font-semibold"
+            >
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              View Resume
+            </button>
             <Link
               href={`mailto:${contactInfo.email}`}
               className="inline-flex items-center gap-2 rounded-full border border-[#efc4bf] bg-[#fff0ed] px-5 py-3 text-[#9a3412] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
@@ -62,6 +77,7 @@ export function Hero() {
           </div>
         </div>
       </div>
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </section>
   );
 }
