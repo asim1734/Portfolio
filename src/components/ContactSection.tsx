@@ -9,12 +9,14 @@ export function ContactSection() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
 
     setStatus('submitting');
+    setError(null);
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
     if (!accessKey) {
@@ -51,12 +53,12 @@ export function ContactSection() {
         setFormState({ name: '', email: '', message: '' });
         setTimeout(() => setStatus('idle'), 5000);
       } else {
-        alert(result.message || 'Something went wrong. Please try again.');
+        setError(result.message || 'Something went wrong. Please try again.');
         setStatus('idle');
       }
-    } catch (error) {
-      console.error('Error sending form:', error);
-      alert('Failed to send message. Please check your internet connection.');
+    } catch (err) {
+      console.error('Error sending form:', err);
+      setError('Failed to send message. Please check your internet connection.');
       setStatus('idle');
     }
   };
@@ -216,6 +218,12 @@ export function ContactSection() {
                     className="mt-2 w-full resize-none rounded-2xl border border-border bg-surface-strong/30 px-4 py-3 text-sm text-foreground outline-none transition-all focus:border-accent focus:bg-surface focus:ring-1 focus:ring-accent/50"
                   />
                 </div>
+
+                {error && (
+                  <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    {error}
+                  </div>
+                )}
 
                 <button
                   type="submit"

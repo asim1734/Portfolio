@@ -33,9 +33,6 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
   const currentLabel = hasScreenshots ? project.screenshots[normalizedScreenshotIndex] : '';
   const trackTransform = `translate3d(-${activeSlideIndex * 100}%, 0, 0) translateX(${pointerOffset}px)`;
 
-  useEffect(() => {
-    // no-op
-  }, []);
 
   useEffect(() => {
     if (!isAutoScrolling || screenshotCount < 2) {
