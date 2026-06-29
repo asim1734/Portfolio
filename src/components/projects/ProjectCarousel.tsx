@@ -95,6 +95,12 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
     setActiveSlideIndex((current) => (current >= slides.length - 1 ? current : current + 1));
   };
 
+  const goToSlide = (index: number) => {
+    handleManualNavigation();
+    // +1 because slides array has a clone prepended at index 0
+    setActiveSlideIndex(index + 1);
+  };
+
   const handleTrackTransitionEnd = () => {
     if (!hasMultipleSlides) {
       return;
@@ -212,7 +218,7 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
                             {label && (label.endsWith('.png') || label.endsWith('.jpg')) ? (
                               <img
                                 src={label.startsWith('/') ? label : `/screenshots/${project.id}/${label}`}
-                                alt="Screenshot"
+                                alt={`${project.name} — ${label.split('/').pop()?.replace(/^\d+-/, '').replace(/\.(png|jpg)$/, '') || 'Screenshot'}`}
                                 className="h-full w-full object-contain pointer-events-none"
                                 draggable={false}
                               />
@@ -271,6 +277,29 @@ export function ProjectCarousel({ project }: ProjectCarouselProps) {
           </button>
         </div>
       </div>
+
+      {/* Dot indicators */}
+      {hasMultipleSlides && (
+        <div className="flex items-center justify-center gap-2 pt-1">
+          {project.screenshots.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              aria-label={`Go to screenshot ${idx + 1}`}
+              onClick={() => goToSlide(idx)}
+              className="rounded-full transition-all duration-300 cursor-pointer"
+              style={{
+                width: idx === normalizedScreenshotIndex ? '20px' : '7px',
+                height: '7px',
+                backgroundColor:
+                  idx === normalizedScreenshotIndex
+                    ? project.accent
+                    : `${project.accent}40`,
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

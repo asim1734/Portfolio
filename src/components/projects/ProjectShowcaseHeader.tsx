@@ -9,7 +9,8 @@ export function ProjectShowcaseHeader() {
 
   return (
     <div className="mb-6 w-full rounded-3xl md:rounded-[2rem] border border-border/80 bg-gradient-to-br from-surface via-surface to-surface-strong/70 p-3 sm:p-4 shadow-[0_22px_60px_-40px_rgba(15,118,110,0.25)] md:p-8">
-      <h2 className="mt-2 md:mt-4 text-3xl font-bold md:text-4xl px-1 md:px-0">Selected Projects & Architecture</h2>
+      <p className="font-mono text-sm text-accent px-1 md:px-0">Selected work</p>
+      <h2 className="mt-4 text-3xl font-bold md:text-4xl px-1 md:px-0">Selected Projects & Architecture</h2>
       <p className="mt-2 md:mt-4 text-sm md:text-base text-text-secondary leading-relaxed md:leading-7 px-1 md:px-0">
         A showcase of end-to-end full-stack applications. Click on any project to explore its system design, monorepo structure, type-safe schema layers, API integrations, and live links.
       </p>

@@ -44,9 +44,9 @@ body {
   line-height: 1.6;
 }
 
-/* Smooth transitions */
-* {
-  transition: background-color 0.2s, color 0.2s;
+/* Smooth transitions — scoped to interactive elements only */
+a, button, input, textarea, select, label {
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 ::selection {

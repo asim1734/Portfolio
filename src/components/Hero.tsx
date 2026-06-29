@@ -20,7 +20,7 @@ export function Hero() {
           </h1>
 
           <p className="mb-8 max-w-4xl text-lg leading-relaxed text-text-secondary md:text-xl">
-            I am a full-stack developer who builds web applications and AI tools. I use TypeScript, React, Next.js, and FastAPI to write clean and reliable code. I enjoy solving problems and am ready to join a great engineering team.
+            Most of my projects started as something I needed and couldn't find — a game library manager, or an AI planning tool that actually gives you output that's easy to understand. When I'm not coding, I'm probably watching some sports or cooking something I saw on a reel. Open to full-stack roles where I can contribute and learn from day one.
           </p>
 
           <div className="mb-8 flex flex-wrap gap-3">

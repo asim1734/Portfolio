@@ -164,7 +164,7 @@ export function ContactSection() {
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-foreground">Message Sent!</h3>
                 <p className="mt-2 text-sm text-text-secondary max-w-xs">
-                  Thank you for reaching out, Asim. I'll get back to you as soon as possible.
+                  Thanks for reaching out! I'll get back to you as soon as possible.
                 </p>
               </div>
             ) : (

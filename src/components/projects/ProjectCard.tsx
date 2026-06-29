@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { type ProjectShowcaseItem } from '@/data/projects';
 import { ProjectCarousel } from './ProjectCarousel';
 import { ProjectDetailTabs } from './ProjectDetailTabs';
@@ -47,9 +48,12 @@ export function ProjectCard({ project, isActive, onToggle }: ProjectCardProps) {
             }}
           >
             {project.logoImage ? (
-              <img
+              <Image
                 src={project.logoImage}
                 alt={`${project.name} logo`}
+                width={40}
+                height={40}
+                quality={85}
                 className="h-10 w-10 object-contain"
                 draggable={false}
               />
