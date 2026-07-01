@@ -272,14 +272,8 @@ export function ChatSection() {
                             </div>
                           );
                         }
-                        if (part.type === 'reasoning') {
-                          return (
-                            <div key={pIdx} className="text-xs text-zinc-500 border-l-2 border-accent/40 pl-3 my-2 italic bg-zinc-100/50 py-1.5 rounded-r-md">
-                              <span className="font-mono text-[9px] uppercase tracking-wider block text-accent not-italic mb-1 font-semibold">Thought process:</span>
-                              {part.text}
-                            </div>
-                          );
-                        }
+
+
                         return null;
                       })}
                     </div>

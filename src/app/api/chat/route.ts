@@ -85,7 +85,7 @@ export async function POST(req: Request) {
 
     // ── Stream response ────────────────────────────────────────────────────
     const result = streamText({
-      model: groq('llama-3.3-70b-versatile'),
+      model: groq('openai/gpt-oss-120b'),
       messages: await convertToModelMessages(messages),
       system: CHATBOT_SYSTEM_PROMPT,
       maxOutputTokens: 600, // cap per-response cost
